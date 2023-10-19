@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+   float a,b,c,r1,r2,d;
+   printf("Enter the values of 'a' 'b' 'c' : ");
+   scanf("%f %f %f",&a,&b,&c);
+   
+   d=b*b - 4*a*c;
+   if(d>0){
+       r1=(-b)+sqrt(d);
+       r2=(-b)-sqrt(d);
+         printf("The two distinct roots of equation are : %.1f, %.1f",r1,r2);
+   }else if(d==0){
+       r1=r2=(-b)/(2*a);
+         printf("The quadratic equation has only one real root : %.1f",r1);
+   }else{
+       printf("The quadratic equation doesnt have real roots.");
+   }
+    return 0;
+}
