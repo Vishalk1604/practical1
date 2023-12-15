@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+void multi(int n,int a[10][10], int b[10][10], int s[10][10]){
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			s[i][j]=0;
+			for(int k=0;k<n;k++){
+				s[i][j] +=a[i][k]*b[k][j];
+			}
+		}
+	}
+}
+
+void ScanMatrix(int n,int c[10][10]){
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			scanf("%d",&c[i][j]);
+		}
+	}
+}
+
+
+int main(){
+	int n, a[10][10], b[10][10], s[10][10];
+	printf("Enter number of ROWS for square matrix (not more than 10) : ");
+	scanf("%d",&n);
+	
+	printf("Enter values of 1st matrix rowwise : ");
+	ScanMatrix(n,a);
+	
+	printf("Enter values of 2nd matrix rowwise : ");
+	ScanMatrix(n,b);
+	
+    multi(n,a,b,s);
+	
+	printf("Result matrix 's':\n");
+    for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			printf("s[%d][%d]=%d \n",i,j,s[i][j]);
+		}
+   }
+
+}
